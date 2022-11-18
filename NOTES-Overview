@@ -1,0 +1,31 @@
+
+GET resource/
+GET resource/:id
+POST resource/
+DELETE resource/:id
+PATCH resource/:id
+POST auth/signup
+POST auth/signin
+
+NestJS Modules
+NestJS Controllers
+NestJS Services and Providers
+Controller to Service communication
+Validation using NestJS Pipes
+
+Backend Architecture
+prod-ready REST API, CRUD
+Error Handling
+DTOs
+System Modularity
+BE Dev Best Practices
+Configuration Management for diff environments
+Logging
+Security Best Practices - storing PWs
+Database choices
+TypeORM
+
+Authentication and Authorization
+Protected Resources - guards
+JWT
+Password Hashing, Salt

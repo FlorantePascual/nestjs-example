@@ -1,0 +1,23 @@
+$ npm i -g @nestjs/cli
+
+Create project:
+$ nest new project-name
+
+Create project from boilerplate:
+$ git clone https://github.com/nestjs/typescript-starter.git the-project
+$ cd the-project
+$ npm install
+$ npm run start
+
+SCHEMATICS
+nest g --help // show all schemactics
+
+MODULES - For organizing stuff
+nest g module tasks // create tasks module
+
+CONTROLLERS - responsible for handling incoming requests and returning responses
+ - bound to a specific path
+ - contain handlers which handle endpoints (path) and request methods (GET, POST, DELETE etc)
+ - can use DI for consuming services
+
+ nest g controller tasks --no-spec
