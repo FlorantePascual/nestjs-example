@@ -21,3 +21,20 @@ CONTROLLERS - responsible for handling incoming requests and returning responses
  - can use DI for consuming services
 
  nest g controller tasks --no-spec
+
+PROVIDERS - can be injected into constructors if decorated as @Injectable
+ - can be a plain value, class, sync/async factory
+ - must be PROVIDED to a module for them to be usable
+
+SERVICES 
+ - services are implemented using providers
+ - not all providers are services
+ - Singleton using @Injectable
+
+nest g service tasks --no-spec
+
+DTO - Data Transfer Object
+ - an object that defines how data will flow in the network
+ - can be an interface or class (Class recommended)
+
+https://github.com/arielweinberger/nestjs-course-task-management/tree/s1-task-management-app
