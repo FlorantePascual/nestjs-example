@@ -38,3 +38,35 @@ DTO - Data Transfer Object
  - can be an interface or class (Class recommended)
 
 https://github.com/arielweinberger/nestjs-course-task-management/tree/s1-task-management-app
+
+ERROR HANDLING
+
+PIPES operate on the args (req, res) to be processed by the route handler just before the handler is called
+PIPES can perform data transformation or data validation, and can be passed on to the handler
+PIPES can throw exceptions which will be handled by NestJS and parsed into an error response
+PIPES can be asynchronous
+EXAMPLES: ValidationPipe, ParseIntPipe
+
+CUSTOM PIPES: annotated by @Injectable() decorator, must implement PipeTransform interface -- 
+    transform(value:any, metadata?: any)
+
+HANDLER-LEVEL PIPES - defined at the handler level via @UsePipes()
+    @Post()
+    @UsePipes(MyPipe)
+    createTask(@Body('description') description) { ... }
+
+PARAMETER-LEVEL PIPE - defined at the parameter level for one specific parameter
+    @Post()
+    createTask(@Body('description', MyPipe) description) { ... }
+
+GLOBAL PIPES - defined at the application level and will be applied to every incoming request
+    app.useGlobalPipes(MyPipe);
+
+Handler vs Parameter level pipe
+Prefer HANDLER-LEVEL pipes since it promotes DTO use and centralizes pipe handling in one pipe
+
+INSTALL FOR VALIDATION https://github.com/typestack/class-validator
+npm i class-validator class-transformer
+yarn add class-validator class-transformer
+
+https://github.com/arielweinberger/nestjs-course-task-management/tree/s2-validation-and-error-handling
