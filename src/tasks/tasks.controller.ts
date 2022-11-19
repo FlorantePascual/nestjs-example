@@ -1,4 +1,4 @@
-import { Task, TaskStatus } from './tasks.model';
+import { Task } from './tasks.model';
 import {
   Controller,
   Get,
